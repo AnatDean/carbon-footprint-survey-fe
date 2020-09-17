@@ -6,7 +6,7 @@ It queries a locally running backend server [found here ](https://github.com/Ana
 
 Currently designs are only implemented for mobile view though much effort has been taken to make it moderately responsive given a small timeframe.
 
-## Prerequisited
+## Prerequisites
 
 - Node
 
@@ -26,9 +26,14 @@ yarn test OR npm test
 
 ## Run Locally
 
-To run the project locally make sure you have installed the dependencies (specified in `Run Tests`)
+To run the project locally:
 
-And then run the server on port 3000 using
+1. Clone this repository
+2. Install the dependencies (specified in `Run Tests`)
+
+3. Clone the backend repository and got it up running - instructions will be [found here](https://github.com/AnatDean/carbon-footprint-survey-be)
+
+4. Run the server on port 3000 using
 
 ```bash
 npm start OR yarn start
