@@ -25,14 +25,14 @@ const progressButtonStyle = (theme: any) => `
 `;
 
 const quizButtonStyle = (theme: any): string => {
-  console.log(theme.pink);
   return `
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   text-align: center;
-  width: 35vw;
+  width: 40vw;
   height: ${rem('89px')};
-  background-color: ${theme.white}
+  background-color: ${theme.white};
+  margin: 5px;
   color: ${theme.black};
   &:focus {
     color: ${theme.white};

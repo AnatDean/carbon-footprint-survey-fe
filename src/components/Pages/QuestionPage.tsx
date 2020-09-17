@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
+import QuestionDetails from '../Quiz/QuestionDetails';
 interface QuestionPageProps {
   currentQuestionNum: number;
   totalQuestions: number;
@@ -18,6 +19,17 @@ const Container = styled.main`
   text-align: start;
 `;
 
+const QuizContainer = styled.section`
+  height: 70vh;
+`;
+
+const AnswerList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
 const QuestionPage: React.FC<QuestionPageProps> = ({
   currentQuestionNum,
   totalQuestions,
@@ -25,15 +37,20 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
   answers,
 }) => (
   <Container>
-    <h1>{question}</h1>
-    <p>
-      Question {currentQuestionNum} of {totalQuestions}
-    </p>
-    {answers.map((answer) => (
-      <Button key={answer} buttonType='quiz' onClick={() => {}}>
-        {answer}
-      </Button>
-    ))}
+    <QuizContainer>
+      <QuestionDetails
+        currentQuestionNum={currentQuestionNum}
+        totalQuestions={totalQuestions}
+        question={question}
+      />
+      <AnswerList>
+        {answers.map((answer) => (
+          <Button key={answer} buttonType='quiz' onClick={() => {}}>
+            {answer}
+          </Button>
+        ))}
+      </AnswerList>
+    </QuizContainer>
     <Button onClick={() => {}} buttonType='primary'>
       Next Question
     </Button>
