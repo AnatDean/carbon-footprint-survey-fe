@@ -4,6 +4,7 @@ import { theme } from './styles/theme';
 import styled, { ThemeProvider } from 'styled-components';
 import QuestionPage from './components/Pages/QuestionPage';
 import { GlobalStyle } from './styles/globalStyle';
+import Quiz from './components/Quiz/Quiz';
 
 const Container = styled.div`
   display: flex;
@@ -13,19 +14,14 @@ const Container = styled.div`
 
 function App() {
   return (
-    <div className='App'>
+    <>
       <ThemeProvider theme={theme}>
         <Container>
-          <QuestionPage
-            currentQuestionNum={2}
-            totalQuestions={4}
-            question={'How often do you eat meat and dairy?'}
-            answers={['A', 'B', 'C', 'D']}
-          />
+          <Quiz />
         </Container>
       </ThemeProvider>
       <GlobalStyle />
-    </div>
+    </>
   );
 }
 
