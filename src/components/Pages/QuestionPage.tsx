@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 import ProgressBar from '../Quiz/ProgressBar';
-import ProgressBarIcon from '../Quiz/ProgressBarIcon';
 import QuestionDetails from '../Quiz/QuestionDetails';
 interface QuestionPageProps {
   currentQuestionNum: number;
@@ -21,14 +20,20 @@ const Container = styled.main`
   text-align: start;
 `;
 
-const QuizContainer = styled.section`
-  height: 70vh;
-`;
+const QuizContainer = styled.section``;
 
 const AnswerList = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const Footer = styled.footer`
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  align-items:center;
   justify-content: center;
 `;
 
@@ -57,9 +62,11 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
         ))}
       </AnswerList>
     </QuizContainer>
-    <Button onClick={() => {}} buttonType='primary'>
-      Next Question
-    </Button>
+    <Footer>
+      <Button onClick={() => {}} buttonType='primary'>
+        Next Question
+      </Button>
+    </Footer>
   </Container>
 );
 export default QuestionPage;

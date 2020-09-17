@@ -19,7 +19,7 @@ function App() {
           <QuestionPage
             currentQuestionNum={2}
             totalQuestions={4}
-            question={'Question Text'}
+            question={'How often do you eat meat and dairy?'}
             answers={['A', 'B', 'C', 'D']}
           />
         </Container>

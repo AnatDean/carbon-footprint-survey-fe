@@ -5,8 +5,8 @@ import { rem } from 'polished';
 const Container = styled.div`
   align-self: center;
   width: 100%;
-  padding-left: ${rem('30px')};
-  padding-top: ${rem('10px')};
+  padding-left: 10%;
+  padding-top: 5%;
 `;
 
 const Detail = styled.p`
