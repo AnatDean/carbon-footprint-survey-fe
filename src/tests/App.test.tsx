@@ -2,9 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Button from '../components/Button';
 import userEvent from '@testing-library/user-event';
-import { ThemeProvider } from 'styled-components';
-import renderer from 'react-test-renderer';
-import { theme } from '../styles/theme';
 
 test('renders button', () => {
   render(
