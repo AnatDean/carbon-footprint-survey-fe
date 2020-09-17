@@ -5,10 +5,13 @@ import ProgressBar from '../Quiz/ProgressBar';
 import QuestionDetails from '../Quiz/QuestionDetails';
 interface QuestionPageProps {
   currentQuestionNum: number;
+  question_id: number;
   totalQuestions: number;
   question: string;
   answers: string[];
   progress: () => void;
+  selectChoice: (id: number, answer: string) => void;
+  selectedChoice: string;
 }
 
 //// background-color: ${(props) => props.theme.offWhite};
@@ -18,7 +21,6 @@ const Container = styled.main`
   height: 100%;
   width: 100%;
   justify-items: center;
-  text-align: start;
 `;
 
 const QuizContainer = styled.section``;
@@ -40,10 +42,13 @@ const Footer = styled.footer`
 
 const QuestionPage: React.FC<QuestionPageProps> = ({
   currentQuestionNum,
+  question_id,
   totalQuestions,
   question,
   answers,
   progress,
+  selectChoice,
+  selectedChoice,
 }) => (
   <Container>
     <ProgressBar
@@ -57,8 +62,13 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
         question={question}
       />
       <AnswerList>
+        {/* display multiple choice answers */}
         {answers.map((answer) => (
-          <Button key={answer} buttonType='quiz' onClick={() => {}}>
+          <Button
+            selected={selectedChoice === answer}
+            key={answer}
+            buttonType='quiz'
+            onClick={() => selectChoice(question_id, answer)}>
             {answer}
           </Button>
         ))}
@@ -66,7 +76,7 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
     </QuizContainer>
     <Footer>
       <Button onClick={progress} buttonType='primary'>
-        Next Question
+        Next question
       </Button>
     </Footer>
   </Container>
