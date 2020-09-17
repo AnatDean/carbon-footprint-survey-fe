@@ -35,6 +35,9 @@ describe('QuestionPage', () => {
     render(
       <QuestionPage
         currentQuestionNum={2}
+        question_id={2}
+        selectChoice={() => {}}
+        selectedChoice=''
         totalQuestions={4}
         question={'Question Text'}
         answers={['A', 'B', 'C', 'D']}
@@ -42,7 +45,7 @@ describe('QuestionPage', () => {
       />
     );
     const questionTitle = screen.queryByText('Question Text');
-    const questionMetaDetail = screen.queryByText('Question 2 of 4');
+    const questionMetaDetail = screen.queryByText('Question 3 of 4'); // accounts for - indexing
 
     expect(questionTitle).toBeInTheDocument();
     expect(questionMetaDetail).toBeInTheDocument();
@@ -52,6 +55,9 @@ describe('QuestionPage', () => {
       <QuestionPage
         currentQuestionNum={2}
         totalQuestions={4}
+        question_id={2}
+        selectChoice={() => {}}
+        selectedChoice=''
         question={'Question Text'}
         answers={['A', 'B', 'C', 'D']}
         progress={() => {}}
@@ -66,12 +72,15 @@ describe('QuestionPage', () => {
       <QuestionPage
         currentQuestionNum={2}
         totalQuestions={4}
+        question_id={2}
+        selectChoice={() => {}}
+        selectedChoice=''
         question={'Question Text'}
         answers={['A', 'B', 'C', 'D']}
         progress={() => {}}
       />
     );
-    const progressButton = screen.queryByText('Next Question');
+    const progressButton = screen.queryByText('Next question');
 
     expect(progressButton).toBeInTheDocument();
   });
