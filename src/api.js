@@ -5,6 +5,5 @@ export const getQuestions = () => {
     .get('http://localhost:9090/api/questions')
     .then(({ data: { questions } }) => {
       return questions;
-    })
-    .catch(console.dir);
+    });
 };
