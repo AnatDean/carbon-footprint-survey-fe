@@ -14,7 +14,7 @@ const Quiz: React.FC<{}> = () => {
   }, []);
   return isLoading ? (
     <p>loading</p>
-  ) : (
+  ) : currentQuestionNum + 1 <= questions.length ? (
     <QuestionPage
       currentQuestionNum={currentQuestionNum}
       question={questions[currentQuestionNum].question}
@@ -22,6 +22,8 @@ const Quiz: React.FC<{}> = () => {
       totalQuestions={questions.length}
       progress={() => setCurrentQuestionNum(currentQuestionNum + 1)}
     />
+  ) : (
+    <h1>Finished!</h1>
   );
 };
 
