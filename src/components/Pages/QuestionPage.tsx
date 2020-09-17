@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
+import ProgressBar from '../Quiz/ProgressBar';
+import ProgressBarIcon from '../Quiz/ProgressBarIcon';
 import QuestionDetails from '../Quiz/QuestionDetails';
 interface QuestionPageProps {
   currentQuestionNum: number;
@@ -37,6 +39,10 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
   answers,
 }) => (
   <Container>
+    <ProgressBar
+      currentQuestionNum={currentQuestionNum}
+      totalQuestions={totalQuestions}
+    />
     <QuizContainer>
       <QuestionDetails
         currentQuestionNum={currentQuestionNum}
