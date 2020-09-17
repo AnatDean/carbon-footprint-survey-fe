@@ -9,18 +9,17 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items; center;
+  width: 100vw;
 `;
 
 function App() {
   return (
-    <>
+    <Container>
       <ThemeProvider theme={theme}>
-        <Container>
-          <Quiz />
-        </Container>
+        <Quiz />
       </ThemeProvider>
       <GlobalStyle />
-    </>
+    </Container>
   );
 }
 
