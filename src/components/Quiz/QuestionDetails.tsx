@@ -17,7 +17,7 @@ const Detail = styled.p`
 const QuestionTitle = styled.h1`
   font-size: ${rem('20px')};
   font-weight: bold;
-  padding-top: ${rem('10px')};
+  padding-top: ${rem('5px')};
   padding-bottom: ${rem('10px')};
   width: 70%;
 `;

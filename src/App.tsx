@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { theme } from './styles/theme';
 import styled, { ThemeProvider } from 'styled-components';
-import QuestionPage from './components/Pages/QuestionPage';
 import { GlobalStyle } from './styles/globalStyle';
 import Quiz from './components/Quiz/Quiz';
 

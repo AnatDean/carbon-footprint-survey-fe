@@ -38,6 +38,7 @@ describe('QuestionPage', () => {
         totalQuestions={4}
         question={'Question Text'}
         answers={['A', 'B', 'C', 'D']}
+        progress={() => {}}
       />
     );
     const questionTitle = screen.queryByText('Question Text');
@@ -53,6 +54,7 @@ describe('QuestionPage', () => {
         totalQuestions={4}
         question={'Question Text'}
         answers={['A', 'B', 'C', 'D']}
+        progress={() => {}}
       />
     );
     const answer = screen.queryByText('A');
@@ -66,6 +68,7 @@ describe('QuestionPage', () => {
         totalQuestions={4}
         question={'Question Text'}
         answers={['A', 'B', 'C', 'D']}
+        progress={() => {}}
       />
     );
     const progressButton = screen.queryByText('Next Question');

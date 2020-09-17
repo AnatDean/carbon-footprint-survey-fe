@@ -20,6 +20,7 @@ const Quiz: React.FC<{}> = () => {
       question={questions[currentQuestionNum].question}
       answers={questions[currentQuestionNum].answers}
       totalQuestions={questions.length}
+      progress={() => setCurrentQuestionNum(currentQuestionNum + 1)}
     />
   );
 };

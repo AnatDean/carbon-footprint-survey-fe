@@ -8,6 +8,7 @@ interface QuestionPageProps {
   totalQuestions: number;
   question: string;
   answers: string[];
+  progress: () => void;
 }
 
 //// background-color: ${(props) => props.theme.offWhite};
@@ -33,7 +34,7 @@ const Footer = styled.footer`
   height: 30vh;
   width: 100%;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
 `;
 
@@ -42,6 +43,7 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
   totalQuestions,
   question,
   answers,
+  progress,
 }) => (
   <Container>
     <ProgressBar
@@ -63,7 +65,7 @@ const QuestionPage: React.FC<QuestionPageProps> = ({
       </AnswerList>
     </QuizContainer>
     <Footer>
-      <Button onClick={() => {}} buttonType='primary'>
+      <Button onClick={progress} buttonType='primary'>
         Next Question
       </Button>
     </Footer>
