@@ -38,3 +38,13 @@ To run the project locally:
 ```bash
 npm start OR yarn start
 ```
+
+## Built Using
+
+- React / hooks
+- Typescript
+- Styled-components
+- polished
+- axios
+- react
+- react testing library
